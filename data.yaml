@@ -1,0 +1,10 @@
+# number_plate.yaml
+
+train: F:/YOLOV8 project/yolov8/Automatic number plate/automatic-number-plate-recognition-python/yolov3-from-opencv-object-detection/Dataset/Dataset/train/images
+val: F:/YOLOV8 project/yolov8/Automatic number plate/automatic-number-plate-recognition-python/yolov3-from-opencv-object-detection/Dataset/Dataset/val/images
+
+# Number of classes
+nc: 1
+
+# Class names
+names: ['number_plate']

@@ -1,0 +1,21 @@
+import os
+import shutil
+
+source_dataset_dir = r'Dataset\number plate dataset\State-wise_OLX\Wb'
+target_dataset_dir = 'F:\\YOLOV8 project\\yolov8\\Automatic number plate\\automatic-number-plate-recognition-python\\yolov3-from-opencv-object-detection\\Dataset\\Dataset'
+images_dir = os.path.join(target_dataset_dir, 'images')
+labels_dir = os.path.join(target_dataset_dir, 'labels')
+
+os.makedirs(images_dir, exist_ok=True)
+os.makedirs(labels_dir, exist_ok=True)
+
+for filename in os.listdir(source_dataset_dir):
+    file_path = os.path.join(source_dataset_dir, filename)
+
+    if os.path.isfile(file_path):
+        if filename.endswith(('.png', '.jpg', '.jpeg')):
+            shutil.move(file_path, os.path.join(images_dir, filename))
+            print(f"Moved image: {filename}")
+        elif filename.endswith('.xml'):
+            shutil.move(file_path, os.path.join(labels_dir, filename))
+            print(f"Moved annotation: {filename}")
